@@ -1,0 +1,2640 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "d3097109",
+   "metadata": {},
+   "source": [
+    "# Inferaq Academy — Week 2 Student Notebook\n",
+    "## Python Foundations for Complete Beginners\n",
+    "\n",
+    "**Programme:** Data Analytics Programme  \n",
+    "**Phase:** Phase 1 — Foundations  \n",
+    "**Week:** Week 2  \n",
+    "**Topic:** Python Foundations, Control Flow, Functions, Modules, Error Handling and NumPy\n",
+    "\n",
+    "---\n",
+    "\n",
+    "## How to use this notebook\n",
+    "\n",
+    "This notebook is designed for students with **zero coding background**.\n",
+    "\n",
+    "1. Read each explanation carefully.\n",
+    "2. Run every code cell using **Shift + Enter**.\n",
+    "3. Do not copy and paste blindly. Type some examples yourself.\n",
+    "4. Change values and re-run cells to see what happens.\n",
+    "5. Complete the practice tasks at the end.\n",
+    "6. Save your work and push it to GitHub.\n",
+    "\n",
+    "## Learning outcomes\n",
+    "\n",
+    "By the end of this notebook, you should be able to:\n",
+    "\n",
+    "- Explain why Python is used in data analytics.\n",
+    "- Create and use variables.\n",
+    "- Identify Python data types: `int`, `float`, `str`, `bool`, `list`, and `dict`.\n",
+    "- Work with strings using common string methods.\n",
+    "- Use lists and dictionaries to store collections of data.\n",
+    "- Write conditions using `if`, `elif`, and `else`.\n",
+    "- Use `for` loops and `while` loops.\n",
+    "- Write list comprehensions.\n",
+    "- Create reusable functions using `def` and `return`.\n",
+    "- Import and use Python modules.\n",
+    "- Handle basic errors using `try` and `except`.\n",
+    "- Use NumPy arrays for fast numerical calculations.\n",
+    "- Apply basic statistics using NumPy."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "08fd6e43",
+   "metadata": {},
+   "source": [
+    "# 1. Why Python?\n",
+    "\n",
+    "Python is one of the most widely used programming languages in data analytics.\n",
+    "\n",
+    "It is popular because it is free, readable, beginner-friendly, powerful, and supported by many libraries used by analysts and data scientists.\n",
+    "\n",
+    "## Plain-English analogy\n",
+    "\n",
+    "Think of Python as a **recipe language**.\n",
+    "\n",
+    "A recipe tells a chef exactly what to do:\n",
+    "\n",
+    "1. Add rice.\n",
+    "2. Add water.\n",
+    "3. Boil for 20 minutes.\n",
+    "4. Serve.\n",
+    "\n",
+    "Python does the same thing for computers. It gives the computer clear instructions in the correct order. The computer does not guess. It only follows your instructions."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8765a027",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 1: Python as a simple instruction language\n",
+    "\n",
+    "print(\"Welcome to Week 2 Python Foundations\")\n",
+    "print(\"Python follows instructions from top to bottom\")\n",
+    "print(\"Every line is an instruction to the computer\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "dbdaccc9",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 2: Python can perform calculations\n",
+    "\n",
+    "print(10 + 5)\n",
+    "print(20 - 7)\n",
+    "print(4 * 3)\n",
+    "print(12 / 4)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5fd46e3f",
+   "metadata": {},
+   "source": [
+    "# 2. Variables\n",
+    "\n",
+    "A **variable** is a named container that stores information.\n",
+    "\n",
+    "## Real-world analogy\n",
+    "\n",
+    "Imagine you have a labelled box. The label is the variable name. The item inside the box is the value. Whenever you need the item, you call the box by its label.\n",
+    "\n",
+    "Example:\n",
+    "\n",
+    "```python\n",
+    "my_name = \"Sarah\"\n",
+    "```\n",
+    "\n",
+    "This means: store the text `\"Sarah\"` inside a variable called `my_name`.\n",
+    "\n",
+    "## Important note about `=`\n",
+    "\n",
+    "In Python, the equals sign `=` means **assignment**. It means put the value on the right into the variable on the left."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "90d859ac",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 1: Creating simple variables\n",
+    "\n",
+    "my_name = \"Sarah\"       # text, also called a string\n",
+    "my_age = 28             # whole number, also called an integer\n",
+    "my_height = 1.65        # decimal number, also called a float\n",
+    "is_student = True       # True or False value, also called Boolean\n",
+    "\n",
+    "print(my_name)\n",
+    "print(my_age)\n",
+    "print(my_height)\n",
+    "print(is_student)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "e6a7a821",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 2: Using variables after creating them\n",
+    "\n",
+    "my_name = \"Sarah\"\n",
+    "my_age = 28\n",
+    "\n",
+    "print(\"Name:\")\n",
+    "print(my_name)\n",
+    "\n",
+    "print(\"Age now:\")\n",
+    "print(my_age)\n",
+    "\n",
+    "print(\"Age in 10 years:\")\n",
+    "print(my_age + 10)\n",
+    "\n",
+    "print(\"Greeting:\")\n",
+    "print(\"Hello, \" + my_name)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f4a27497",
+   "metadata": {},
+   "source": [
+    "## Variable naming rules\n",
+    "\n",
+    "Good variable names make code easier to read.\n",
+    "\n",
+    "### Good examples\n",
+    "\n",
+    "```python\n",
+    "student_name = \"Amara\"\n",
+    "total_sales = 4500\n",
+    "has_paid = True\n",
+    "```\n",
+    "\n",
+    "### Poor examples\n",
+    "\n",
+    "```python\n",
+    "x = \"Amara\"\n",
+    "a = 4500\n",
+    "hp = True\n",
+    "```\n",
+    "\n",
+    "The poor examples may work, but they are difficult to understand later.\n",
+    "\n",
+    "## Rules\n",
+    "\n",
+    "- Variable names cannot contain spaces.\n",
+    "- Use underscores `_` instead of spaces.\n",
+    "- Variable names should not start with numbers.\n",
+    "- Use meaningful names.\n",
+    "- Python is case-sensitive: `Name` and `name` are different."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f3ccd3c2",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 3: Good variable names\n",
+    "\n",
+    "student_name = \"Amara\"\n",
+    "student_age = 24\n",
+    "course_name = \"Data Analytics\"\n",
+    "has_paid = True\n",
+    "\n",
+    "print(student_name)\n",
+    "print(student_age)\n",
+    "print(course_name)\n",
+    "print(has_paid)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f5c87303",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 4: Python is case-sensitive\n",
+    "\n",
+    "name = \"Alice\"\n",
+    "Name = \"Bob\"\n",
+    "\n",
+    "print(name)  # This prints Alice\n",
+    "print(Name)  # This prints Bob\n",
+    "\n",
+    "# Python treats name and Name as two different variables."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "38e5519f",
+   "metadata": {},
+   "source": [
+    "# 3. The `type()` Function\n",
+    "\n",
+    "Every value in Python has a **data type**.\n",
+    "\n",
+    "The data type tells Python what kind of value it is working with.\n",
+    "\n",
+    "You can use `type()` to ask Python: what type of data is this?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "e9098268",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 1: Checking variable types\n",
+    "\n",
+    "my_name = \"Sarah\"\n",
+    "my_age = 28\n",
+    "my_height = 1.65\n",
+    "is_student = True\n",
+    "\n",
+    "print(type(my_name))\n",
+    "print(type(my_age))\n",
+    "print(type(my_height))\n",
+    "print(type(is_student))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "3675ae4a",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 2: Checking values directly\n",
+    "\n",
+    "print(type(\"London\"))\n",
+    "print(type(2026))\n",
+    "print(type(9.99))\n",
+    "print(type(False))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a1b894fa",
+   "metadata": {},
+   "source": [
+    "# 4. Core Data Types\n",
+    "\n",
+    "Python has many data types. In this week, we focus on six important ones:\n",
+    "\n",
+    "| Data Type | Meaning | Example |\n",
+    "|---|---|---|\n",
+    "| `int` | Whole number | `28` |\n",
+    "| `float` | Decimal number | `1.75` |\n",
+    "| `str` | Text | `\"London\"` |\n",
+    "| `bool` | True or False | `True` |\n",
+    "| `list` | Ordered collection | `[\"Netflix\", \"Spotify\"]` |\n",
+    "| `dict` | Key-value collection | `{\"name\": \"Ali\", \"age\": 30}` |\n",
+    "\n",
+    "These six data types appear constantly in data analytics."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f84070c3",
+   "metadata": {},
+   "source": [
+    "## 4.1 Integers — `int`\n",
+    "\n",
+    "An integer is a whole number. Integers are used for counts, ages, years, number of students, number of orders and many other whole-number values."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "51226470",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 1: Integers\n",
+    "\n",
+    "age = 28\n",
+    "year = 2026\n",
+    "number_of_students = 35\n",
+    "\n",
+    "print(age)\n",
+    "print(year)\n",
+    "print(number_of_students)\n",
+    "print(type(age))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "13467ed5",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 2: Integer arithmetic\n",
+    "\n",
+    "students_registered = 40\n",
+    "students_attended = 32\n",
+    "students_absent = students_registered - students_attended\n",
+    "\n",
+    "print(\"Registered:\", students_registered)\n",
+    "print(\"Attended:\", students_attended)\n",
+    "print(\"Absent:\", students_absent)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "87202b68",
+   "metadata": {},
+   "source": [
+    "## 4.2 Floats — `float`\n",
+    "\n",
+    "A float is a decimal number. Floats are used for money, percentages, measurements, averages and rates."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "c67cf36c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 1: Floats\n",
+    "\n",
+    "height = 1.75\n",
+    "price = 9.99\n",
+    "interest_rate = 0.05\n",
+    "\n",
+    "print(height)\n",
+    "print(price)\n",
+    "print(interest_rate)\n",
+    "print(type(price))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "6d2250d8",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 2: Calculating an average\n",
+    "\n",
+    "score1 = 80\n",
+    "score2 = 75\n",
+    "score3 = 90\n",
+    "\n",
+    "average_score = (score1 + score2 + score3) / 3\n",
+    "\n",
+    "print(\"Average score:\", average_score)\n",
+    "print(type(average_score))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "945385f1",
+   "metadata": {},
+   "source": [
+    "## 4.3 Strings — `str`\n",
+    "\n",
+    "A string is text. Strings must be placed inside quotation marks.\n",
+    "\n",
+    "Important: `5` is an integer, but `\"5\"` is a string. They look similar, but Python treats them differently."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "e5bb2074",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 1: Strings\n",
+    "\n",
+    "student_name = \"Alice\"\n",
+    "city = \"London\"\n",
+    "postcode = \"SW1A 1AA\"\n",
+    "\n",
+    "print(student_name)\n",
+    "print(city)\n",
+    "print(postcode)\n",
+    "print(type(student_name))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "1c9bd3eb",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 2: 5 and '5' are different\n",
+    "\n",
+    "number_value = 5\n",
+    "text_value = \"5\"\n",
+    "\n",
+    "print(number_value)\n",
+    "print(text_value)\n",
+    "\n",
+    "print(type(number_value))\n",
+    "print(type(text_value))\n",
+    "\n",
+    "print(number_value + 10)\n",
+    "\n",
+    "# The next line would cause an error because text cannot be added to an integer directly:\n",
+    "# print(text_value + 10)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5b334071",
+   "metadata": {},
+   "source": [
+    "## 4.4 Booleans — `bool`\n",
+    "\n",
+    "A Boolean can only be `True` or `False`. Booleans are used for yes/no situations, such as payment status, active status, login status, or whether a condition has been met."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "36ea708e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 1: Boolean values\n",
+    "\n",
+    "has_paid = True\n",
+    "is_active = False\n",
+    "is_admin = True\n",
+    "\n",
+    "print(has_paid)\n",
+    "print(is_active)\n",
+    "print(is_admin)\n",
+    "\n",
+    "print(type(has_paid))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "e91a6d45",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 2: Booleans are useful in conditions\n",
+    "\n",
+    "has_paid = True\n",
+    "\n",
+    "if has_paid:\n",
+    "    print(\"Student can access the class.\")\n",
+    "else:\n",
+    "    print(\"Student needs to complete payment.\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6451787f",
+   "metadata": {},
+   "source": [
+    "## 4.5 Lists — `list`\n",
+    "\n",
+    "A list stores multiple items in order. Lists use square brackets `[]`.\n",
+    "\n",
+    "Python starts counting from **0**, not 1."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "6acaf961",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 1: Creating and accessing a list\n",
+    "\n",
+    "apps = [\"Netflix\", \"Spotify\", \"Amazon\", \"Instagram\"]\n",
+    "\n",
+    "print(apps)\n",
+    "print(apps[0])   # first item\n",
+    "print(apps[1])   # second item\n",
+    "print(apps[-1])  # last item"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ccbeb8ac",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 2: Modifying a list\n",
+    "\n",
+    "apps = [\"Netflix\", \"Spotify\", \"Amazon\", \"Instagram\"]\n",
+    "\n",
+    "apps.append(\"WhatsApp\")     # add to the end\n",
+    "apps.remove(\"Amazon\")       # remove by value\n",
+    "apps.sort()                 # sort alphabetically\n",
+    "\n",
+    "print(apps)\n",
+    "print(\"Number of apps:\", len(apps))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "20b5b580",
+   "metadata": {},
+   "source": [
+    "## 4.6 Dictionaries — `dict`\n",
+    "\n",
+    "A dictionary stores data as **key-value pairs**.\n",
+    "\n",
+    "Example:\n",
+    "\n",
+    "```python\n",
+    "student = {\"name\": \"Priya\", \"age\": 24, \"city\": \"London\"}\n",
+    "```\n",
+    "\n",
+    "The key is like a label. The value is the information stored under that label."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ad36c5bb",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 1: Creating and reading from a dictionary\n",
+    "\n",
+    "student = {\n",
+    "    \"name\": \"Priya\",\n",
+    "    \"age\": 24,\n",
+    "    \"city\": \"London\",\n",
+    "    \"score\": 87\n",
+    "}\n",
+    "\n",
+    "print(student)\n",
+    "print(student[\"name\"])\n",
+    "print(student[\"score\"])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4e543c7b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 2: Updating and adding dictionary values\n",
+    "\n",
+    "student = {\n",
+    "    \"name\": \"Priya\",\n",
+    "    \"age\": 24,\n",
+    "    \"city\": \"London\",\n",
+    "    \"score\": 87\n",
+    "}\n",
+    "\n",
+    "student[\"score\"] = 92\n",
+    "student[\"email\"] = \"p@example.com\"\n",
+    "\n",
+    "print(student)\n",
+    "\n",
+    "for key, value in student.items():\n",
+    "    print(f\"{key}: {value}\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "bb350c28",
+   "metadata": {},
+   "source": [
+    "# 5. Operators\n",
+    "\n",
+    "Operators allow Python to perform actions such as arithmetic and comparison.\n",
+    "\n",
+    "| Operator | Meaning | Example |\n",
+    "|---|---|---|\n",
+    "| `+` | Add | `5 + 2` |\n",
+    "| `-` | Subtract | `5 - 2` |\n",
+    "| `*` | Multiply | `5 * 2` |\n",
+    "| `/` | Divide | `5 / 2` |\n",
+    "| `//` | Floor division | `5 // 2` |\n",
+    "| `%` | Remainder | `5 % 2` |\n",
+    "| `**` | Power | `5 ** 2` |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a06d3cf6",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 1: Arithmetic operators\n",
+    "\n",
+    "a = 10\n",
+    "b = 3\n",
+    "\n",
+    "print(\"Addition:\", a + b)\n",
+    "print(\"Subtraction:\", a - b)\n",
+    "print(\"Multiplication:\", a * b)\n",
+    "print(\"Division:\", a / b)\n",
+    "print(\"Floor division:\", a // b)\n",
+    "print(\"Remainder:\", a % b)\n",
+    "print(\"Power:\", a ** b)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d73e6b06",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 2: Real data analytics-style calculation\n",
+    "\n",
+    "monthly_fee = 200\n",
+    "number_of_students = 25\n",
+    "monthly_revenue = monthly_fee * number_of_students\n",
+    "\n",
+    "print(\"Monthly revenue: £\", monthly_revenue)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f9add29a",
+   "metadata": {},
+   "source": [
+    "# 6. Working with Strings\n",
+    "\n",
+    "Strings are very important in data analytics because real datasets often contain text: names, addresses, email addresses, products, cities, job titles and categories.\n",
+    "\n",
+    "Real text data is often messy. Python gives us methods to clean and transform strings."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "57f9cc95",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 1: Changing case\n",
+    "\n",
+    "name = \"alice jones\"\n",
+    "\n",
+    "print(name.upper())\n",
+    "print(name.lower())\n",
+    "print(name.title())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "56947e9c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 2: Cleaning spaces\n",
+    "\n",
+    "messy_name = \"  alice jones  \"\n",
+    "\n",
+    "print(\"Before cleaning:\")\n",
+    "print(messy_name)\n",
+    "\n",
+    "print(\"After cleaning:\")\n",
+    "print(messy_name.strip())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "da10a05a",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 3: Checking text content\n",
+    "\n",
+    "name = \"alice jones\"\n",
+    "\n",
+    "print(name.startswith(\"ali\"))\n",
+    "print(name.endswith(\"jones\"))\n",
+    "print(len(name))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "44b8f3c0",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 4: Replacing text\n",
+    "\n",
+    "name = \"alice jones\"\n",
+    "new_name = name.replace(\"alice\", \"bob\")\n",
+    "print(new_name)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8993b2c3",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 5: Splitting text into a list\n",
+    "\n",
+    "full_name = \"alice jones\"\n",
+    "parts = full_name.split(\" \")\n",
+    "\n",
+    "print(parts)\n",
+    "print(parts[0])\n",
+    "print(parts[1])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f4abd991",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 6: F-strings\n",
+    "\n",
+    "name = \"alice jones\"\n",
+    "age = 28\n",
+    "city = \"London\"\n",
+    "\n",
+    "sentence = f\"My name is {name.title()}, I am {age} years old, and I live in {city}.\"\n",
+    "print(sentence)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2a8c15af",
+   "metadata": {},
+   "source": [
+    "## Why string cleaning matters in data analytics\n",
+    "\n",
+    "Imagine your dataset contains the same customer name in different forms:\n",
+    "\n",
+    "- `\"Alice Jones\"`\n",
+    "- `\" alice jones \"`\n",
+    "- `\"ALICE JONES\"`\n",
+    "- `\"alice jones\"`\n",
+    "\n",
+    "A human can see they probably refer to the same person. Python may treat them as different unless we clean them."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a14155e5",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 7: Cleaning messy customer names\n",
+    "\n",
+    "customers = [\" Alice Jones \", \"ALICE JONES\", \"alice jones\", \"Alice Jones\"]\n",
+    "\n",
+    "cleaned_customers = []\n",
+    "\n",
+    "for customer in customers:\n",
+    "    cleaned_name = customer.strip().lower()\n",
+    "    cleaned_customers.append(cleaned_name)\n",
+    "\n",
+    "print(cleaned_customers)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "5c87a6cc",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 8: Cleaning and title-casing names for reporting\n",
+    "\n",
+    "customers = [\" Alice Jones \", \"BOB SMITH\", \"mary johnson\"]\n",
+    "cleaned_for_report = []\n",
+    "\n",
+    "for customer in customers:\n",
+    "    cleaned_name = customer.strip().title()\n",
+    "    cleaned_for_report.append(cleaned_name)\n",
+    "\n",
+    "print(cleaned_for_report)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1a083019",
+   "metadata": {},
+   "source": [
+    "# 7. Lists in More Detail\n",
+    "\n",
+    "A list is useful when you want to store several related items, such as students, scores, apps, products or cities."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "813d57bb",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 1: List of student scores\n",
+    "\n",
+    "scores = [88, 72, 91, 45, 67]\n",
+    "\n",
+    "print(scores)\n",
+    "print(\"First score:\", scores[0])\n",
+    "print(\"Last score:\", scores[-1])\n",
+    "print(\"Number of scores:\", len(scores))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4b407831",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 2: List slicing\n",
+    "\n",
+    "apps = [\"Netflix\", \"Spotify\", \"Amazon\", \"Instagram\", \"WhatsApp\"]\n",
+    "\n",
+    "print(apps[0:2])\n",
+    "print(apps[1:4])\n",
+    "print(apps[:3])\n",
+    "print(apps[3:])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "2a9cf968",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 3: Adding and removing items\n",
+    "\n",
+    "students = [\"Amara\", \"Kwame\", \"Priya\"]\n",
+    "\n",
+    "students.append(\"Zara\")\n",
+    "print(students)\n",
+    "\n",
+    "students.remove(\"Kwame\")\n",
+    "print(students)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ff76cbdc",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 4: Sorting lists\n",
+    "\n",
+    "scores = [88, 45, 72, 91, 38, 67]\n",
+    "\n",
+    "scores.sort()\n",
+    "print(\"Ascending:\", scores)\n",
+    "\n",
+    "scores.sort(reverse=True)\n",
+    "print(\"Descending:\", scores)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8277ae4b",
+   "metadata": {},
+   "source": [
+    "# 8. Dictionaries in More Detail\n",
+    "\n",
+    "Dictionaries are excellent for structured data, especially when each item has labels."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "bd248512",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 1: Student profile dictionary\n",
+    "\n",
+    "student = {\n",
+    "    \"name\": \"Amara\",\n",
+    "    \"age\": 23,\n",
+    "    \"city\": \"Leeds\",\n",
+    "    \"score\": 85,\n",
+    "    \"has_paid\": True\n",
+    "}\n",
+    "\n",
+    "print(student[\"name\"])\n",
+    "print(student[\"score\"])\n",
+    "print(student[\"has_paid\"])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f0484d0c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 2: Looping through a dictionary\n",
+    "\n",
+    "student = {\n",
+    "    \"name\": \"Amara\",\n",
+    "    \"age\": 23,\n",
+    "    \"city\": \"Leeds\",\n",
+    "    \"score\": 85,\n",
+    "    \"has_paid\": True\n",
+    "}\n",
+    "\n",
+    "for key, value in student.items():\n",
+    "    print(f\"{key}: {value}\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f91b9832",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 3: Dictionary of students and scores\n",
+    "\n",
+    "students = {\n",
+    "    \"Amara\": 85,\n",
+    "    \"Kwame\": 62,\n",
+    "    \"Priya\": 91,\n",
+    "    \"Jake\": 55,\n",
+    "    \"Zara\": 78\n",
+    "}\n",
+    "\n",
+    "print(students[\"Priya\"])\n",
+    "\n",
+    "students[\"Jake\"] = 60\n",
+    "students[\"Maya\"] = 88\n",
+    "\n",
+    "print(students)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "7f15e50f",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 4: Dictionary for app data collection\n",
+    "\n",
+    "data_collected = {\n",
+    "    \"Netflix\": \"Watch history, ratings, search terms\",\n",
+    "    \"Spotify\": \"Listening history, skips, playlists\",\n",
+    "    \"Google Maps\": \"Location history, routes, searches\"\n",
+    "}\n",
+    "\n",
+    "for app, data in data_collected.items():\n",
+    "    print(f\"{app} collects: {data}\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "83aa3201",
+   "metadata": {},
+   "source": [
+    "# 9. Conditions: `if`, `elif`, and `else`\n",
+    "\n",
+    "A condition allows your code to make decisions.\n",
+    "\n",
+    "In plain English: if this is true, do this. Otherwise, do something else."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4534e22e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 1: Simple pass/fail condition\n",
+    "\n",
+    "score = 72\n",
+    "\n",
+    "if score >= 60:\n",
+    "    print(\"PASS\")\n",
+    "else:\n",
+    "    print(\"FAIL\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "0009b8c6",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 2: Grade classifier\n",
+    "\n",
+    "score = 74\n",
+    "\n",
+    "if score >= 90:\n",
+    "    print(\"A — Distinction\")\n",
+    "elif score >= 75:\n",
+    "    print(\"B — Merit\")\n",
+    "elif score >= 60:\n",
+    "    print(\"C — Pass\")\n",
+    "else:\n",
+    "    print(\"F — Please resit\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "cb5bc504",
+   "metadata": {},
+   "source": [
+    "## Comparison operators\n",
+    "\n",
+    "| Operator | Meaning |\n",
+    "|---|---|\n",
+    "| `==` | equal to |\n",
+    "| `!=` | not equal to |\n",
+    "| `>` | greater than |\n",
+    "| `<` | less than |\n",
+    "| `>=` | greater than or equal to |\n",
+    "| `<=` | less than or equal to |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "5887b9e5",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 3: Comparison operators\n",
+    "\n",
+    "print(5 == 5)\n",
+    "print(5 != 3)\n",
+    "print(7 > 3)\n",
+    "print(3 < 5)\n",
+    "print(5 >= 5)\n",
+    "print(4 <= 2)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "32033fcc",
+   "metadata": {},
+   "source": [
+    "## Logical operators\n",
+    "\n",
+    "| Operator | Meaning |\n",
+    "|---|---|\n",
+    "| `and` | both conditions must be True |\n",
+    "| `or` | at least one condition must be True |\n",
+    "| `not` | reverses True/False |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4ffa5018",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 4: Logical operators\n",
+    "\n",
+    "age = 22\n",
+    "has_id = True\n",
+    "\n",
+    "if age >= 18 and has_id:\n",
+    "    print(\"Entry granted\")\n",
+    "else:\n",
+    "    print(\"Entry denied\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "6e061237",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 5: Course access condition\n",
+    "\n",
+    "has_paid = True\n",
+    "has_registered = True\n",
+    "\n",
+    "if has_paid and has_registered:\n",
+    "    print(\"Student can access the course.\")\n",
+    "else:\n",
+    "    print(\"Student cannot access the course yet.\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "28874d25",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 6: Using or\n",
+    "\n",
+    "has_coupon = False\n",
+    "is_referral_student = True\n",
+    "\n",
+    "if has_coupon or is_referral_student:\n",
+    "    print(\"Student receives a discount.\")\n",
+    "else:\n",
+    "    print(\"No discount applied.\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "82c82b59",
+   "metadata": {},
+   "source": [
+    "# 10. For Loops\n",
+    "\n",
+    "A `for` loop repeats a block of code for every item in a collection. This is very important in data analytics because it helps us process many rows or values automatically."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "14cc7b4b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 1: Looping through apps\n",
+    "\n",
+    "apps = [\"Netflix\", \"Spotify\", \"Amazon\", \"Instagram\"]\n",
+    "\n",
+    "for app in apps:\n",
+    "    print(f\"I use {app} every day\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "aa722261",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 2: Looping through scores\n",
+    "\n",
+    "scores = [88, 45, 72, 91, 38, 67]\n",
+    "\n",
+    "for score in scores:\n",
+    "    print(score)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "1637a330",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 3: Looping with a condition\n",
+    "\n",
+    "scores = [88, 45, 72, 91, 38, 67]\n",
+    "\n",
+    "print(\"Students who passed:\")\n",
+    "\n",
+    "for score in scores:\n",
+    "    if score >= 60:\n",
+    "        print(f\"Score {score} → PASS\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "544c7465",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 4: Using range()\n",
+    "\n",
+    "for i in range(5):\n",
+    "    print(f\"Step {i}\")\n",
+    "\n",
+    "print(\"---\")\n",
+    "\n",
+    "for i in range(1, 6):\n",
+    "    print(f\"Round {i}\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "13e48637",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 5: Looping over a dictionary\n",
+    "\n",
+    "student = {\n",
+    "    \"name\": \"Amara\",\n",
+    "    \"age\": 23,\n",
+    "    \"city\": \"Leeds\"\n",
+    "}\n",
+    "\n",
+    "for key, value in student.items():\n",
+    "    print(f\"{key}: {value}\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d038b0b3",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 6: Calculating total using a loop\n",
+    "\n",
+    "sales = [120, 250, 300, 180]\n",
+    "total_sales = 0\n",
+    "\n",
+    "for amount in sales:\n",
+    "    total_sales = total_sales + amount\n",
+    "\n",
+    "print(\"Total sales:\", total_sales)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6234e3f2",
+   "metadata": {},
+   "source": [
+    "# 11. While Loops\n",
+    "\n",
+    "A `while` loop repeats while a condition remains True. It is useful when you do not know in advance how many times something should repeat.\n",
+    "\n",
+    "A while loop must eventually stop. If the condition never becomes False, the loop will run forever."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "b9bab211",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 1: Basic while loop\n",
+    "\n",
+    "count = 1\n",
+    "\n",
+    "while count <= 5:\n",
+    "    print(f\"Attempt {count}\")\n",
+    "    count = count + 1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "0e131a77",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 2: Countdown\n",
+    "\n",
+    "countdown = 5\n",
+    "\n",
+    "while countdown > 0:\n",
+    "    print(countdown)\n",
+    "    countdown = countdown - 1\n",
+    "\n",
+    "print(\"Go!\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6578ddca",
+   "metadata": {},
+   "source": [
+    "## `break` and `continue`\n",
+    "\n",
+    "`break` stops a loop early. `continue` skips the current loop step and moves to the next one."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "7fa0e8a7",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 3: break\n",
+    "\n",
+    "count = 1\n",
+    "\n",
+    "while True:\n",
+    "    if count == 3:\n",
+    "        break\n",
+    "    print(count)\n",
+    "    count += 1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d8249c35",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 4: continue\n",
+    "\n",
+    "for i in range(1, 6):\n",
+    "    if i == 3:\n",
+    "        continue\n",
+    "    print(i)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "874e15a2",
+   "metadata": {},
+   "source": [
+    "# 12. List Comprehensions\n",
+    "\n",
+    "A list comprehension is a shorter way to create a list using a loop.\n",
+    "\n",
+    "Pattern:\n",
+    "\n",
+    "```python\n",
+    "new_list = [what_to_keep for item in existing_list if condition]\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "9c931140",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 1: The long way\n",
+    "\n",
+    "squares = []\n",
+    "\n",
+    "for x in range(1, 6):\n",
+    "    squares.append(x * x)\n",
+    "\n",
+    "print(squares)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f9a529df",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 2: The short way with list comprehension\n",
+    "\n",
+    "squares = [x * x for x in range(1, 6)]\n",
+    "print(squares)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "1ad803c1",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 3: Keep only even numbers\n",
+    "\n",
+    "evens = [x for x in range(1, 11) if x % 2 == 0]\n",
+    "print(evens)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "1f7b66b7",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 4: Keep only passing scores\n",
+    "\n",
+    "scores = [88, 45, 72, 91, 38, 67]\n",
+    "passed = [s for s in scores if s >= 60]\n",
+    "print(passed)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a3e5d8db",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 5: Add bonus marks to all scores\n",
+    "\n",
+    "scores = [88, 45, 72, 91, 38, 67]\n",
+    "boosted = [s + 5 for s in scores]\n",
+    "print(boosted)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "cbac3901",
+   "metadata": {},
+   "source": [
+    "# 13. Functions\n",
+    "\n",
+    "A function is a reusable block of code. You define it once and call it whenever you need it.\n",
+    "\n",
+    "Functions help you avoid repetition, organise your work, make code easier to read, and reuse calculations."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f7797585",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 1: Basic function\n",
+    "\n",
+    "def greet(name):\n",
+    "    message = f\"Hello, {name}!\"\n",
+    "    return message\n",
+    "\n",
+    "result = greet(\"Sarah\")\n",
+    "print(result)\n",
+    "\n",
+    "print(greet(\"Kwame\"))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "bcb70c82",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 2: Grade function\n",
+    "\n",
+    "def calculate_grade(score, pass_mark=60):\n",
+    "    if score >= pass_mark:\n",
+    "        return \"PASS\"\n",
+    "    else:\n",
+    "        return \"FAIL\"\n",
+    "\n",
+    "print(calculate_grade(72))\n",
+    "print(calculate_grade(45))\n",
+    "print(calculate_grade(45, 40))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "2b5a6732",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 3: Function that returns multiple values\n",
+    "\n",
+    "def summarise(numbers):\n",
+    "    total = sum(numbers)\n",
+    "    average = total / len(numbers)\n",
+    "    highest = max(numbers)\n",
+    "    return total, average, highest\n",
+    "\n",
+    "scores = [88, 72, 91, 45, 67]\n",
+    "t, a, h = summarise(scores)\n",
+    "\n",
+    "print(f\"Total: {t}\")\n",
+    "print(f\"Average: {a:.1f}\")\n",
+    "print(f\"Highest: {h}\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a06c88fe",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 4: BMI function\n",
+    "\n",
+    "def calculate_bmi(weight_kg, height_m):\n",
+    "    bmi = weight_kg / (height_m ** 2)\n",
+    "    return bmi\n",
+    "\n",
+    "bmi_result = calculate_bmi(70, 1.75)\n",
+    "print(f\"BMI: {bmi_result:.2f}\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8ddfcd77",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 5: Function for tuition balance\n",
+    "\n",
+    "def calculate_balance(total_fee, amount_paid):\n",
+    "    balance = total_fee - amount_paid\n",
+    "    return balance\n",
+    "\n",
+    "print(calculate_balance(400, 200))\n",
+    "print(calculate_balance(300000, 150000))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b89b2252",
+   "metadata": {},
+   "source": [
+    "## `print` versus `return`\n",
+    "\n",
+    "`print()` displays something on the screen. `return` sends a value back from a function so it can be reused."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "6675b2fc",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 6: print displays output but does not store it\n",
+    "\n",
+    "def show_double(number):\n",
+    "    print(number * 2)\n",
+    "\n",
+    "result = show_double(5)\n",
+    "print(\"Result is:\", result)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "b86efb37",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 7: return gives back a reusable value\n",
+    "\n",
+    "def return_double(number):\n",
+    "    return number * 2\n",
+    "\n",
+    "result = return_double(5)\n",
+    "print(\"Result is:\", result)\n",
+    "print(\"Result plus 10 is:\", result + 10)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "efc54437",
+   "metadata": {},
+   "source": [
+    "# 14. Modules\n",
+    "\n",
+    "A module is a Python toolbox. Instead of writing every tool ourselves, we import tools that already exist.\n",
+    "\n",
+    "The pattern is:\n",
+    "\n",
+    "```python\n",
+    "import module_name\n",
+    "module_name.function()\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "538c8db6",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 1: math module\n",
+    "\n",
+    "import math\n",
+    "\n",
+    "print(math.pi)\n",
+    "print(math.sqrt(144))\n",
+    "print(math.ceil(4.2))\n",
+    "print(math.floor(4.9))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "c9e026ab",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 2: random module\n",
+    "\n",
+    "import random\n",
+    "\n",
+    "print(random.randint(1, 10))\n",
+    "print(random.choice([\"A\", \"B\", \"C\"]))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "0fef4528",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 3: Random student selector\n",
+    "\n",
+    "import random\n",
+    "\n",
+    "students = [\"Amara\", \"Kwame\", \"Priya\", \"Jake\", \"Zara\"]\n",
+    "selected_student = random.choice(students)\n",
+    "\n",
+    "print(f\"Selected student: {selected_student}\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e30b780b",
+   "metadata": {},
+   "source": [
+    "# 15. Error Handling\n",
+    "\n",
+    "Errors are normal in programming. An error message is not a failure; it is a clue.\n",
+    "\n",
+    "Common beginner errors:\n",
+    "\n",
+    "| Error | Meaning |\n",
+    "|---|---|\n",
+    "| `NameError` | Variable does not exist or is spelt wrongly |\n",
+    "| `TypeError` | Wrong data type used |\n",
+    "| `IndexError` | List position does not exist |\n",
+    "| `ZeroDivisionError` | Tried to divide by zero |\n",
+    "| `IndentationError` | Code block not indented correctly |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "2302c90c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 1: Handling division by zero\n",
+    "\n",
+    "try:\n",
+    "    result = 10 / 0\n",
+    "    print(result)\n",
+    "except ZeroDivisionError:\n",
+    "    print(\"Error: cannot divide by zero\")\n",
+    "finally:\n",
+    "    print(\"This runs no matter what\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d6904201",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 2: Safe conversion to integer\n",
+    "\n",
+    "def safe_convert(value):\n",
+    "    try:\n",
+    "        return int(value)\n",
+    "    except ValueError:\n",
+    "        return \"Not a number\"\n",
+    "    except TypeError:\n",
+    "        return \"Wrong type\"\n",
+    "\n",
+    "print(safe_convert(\"42\"))\n",
+    "print(safe_convert(\"abc\"))\n",
+    "print(safe_convert(None))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "db670b2c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 3: Handling list index errors\n",
+    "\n",
+    "apps = [\"Netflix\", \"Spotify\", \"Amazon\"]\n",
+    "\n",
+    "try:\n",
+    "    print(apps[10])\n",
+    "except IndexError:\n",
+    "    print(\"That position does not exist in the list.\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "fadc8bb3",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 4: Handling missing dictionary keys\n",
+    "\n",
+    "student = {\n",
+    "    \"name\": \"Amara\",\n",
+    "    \"score\": 85\n",
+    "}\n",
+    "\n",
+    "try:\n",
+    "    print(student[\"email\"])\n",
+    "except KeyError:\n",
+    "    print(\"The key 'email' does not exist in this dictionary.\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ef333ec5",
+   "metadata": {},
+   "source": [
+    "# 16. NumPy\n",
+    "\n",
+    "NumPy means **Numerical Python**. It is a library for fast numerical work.\n",
+    "\n",
+    "We usually import NumPy like this:\n",
+    "\n",
+    "```python\n",
+    "import numpy as np\n",
+    "```\n",
+    "\n",
+    "The `np` is an alias. It means we can type `np` instead of `numpy`."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "2bd6ac2c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 1: Import NumPy and create an array\n",
+    "\n",
+    "import numpy as np\n",
+    "\n",
+    "salaries = np.array([32000, 45000, 28000, 67000, 52000])\n",
+    "\n",
+    "print(salaries)\n",
+    "print(type(salaries))\n",
+    "print(salaries.shape)\n",
+    "print(salaries.dtype)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "9a546ab9",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 2: Vectorised operation — 10% salary raise\n",
+    "\n",
+    "import numpy as np\n",
+    "\n",
+    "salaries = np.array([32000, 45000, 28000, 67000, 52000])\n",
+    "after_raise = salaries * 1.10\n",
+    "\n",
+    "print(after_raise)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "4dc0319a",
+   "metadata": {},
+   "source": [
+    "## Vectorised operations\n",
+    "\n",
+    "A vectorised operation applies a calculation to all values at once.\n",
+    "\n",
+    "With a normal Python list, you often need a loop. With NumPy, you can apply the calculation directly to the whole array."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f86f359f",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 3: Normal Python list approach\n",
+    "\n",
+    "salaries_list = [32000, 45000, 28000, 67000, 52000]\n",
+    "after_raise_list = []\n",
+    "\n",
+    "for salary in salaries_list:\n",
+    "    after_raise_list.append(salary * 1.10)\n",
+    "\n",
+    "print(after_raise_list)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "02b70b49",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 4: NumPy approach\n",
+    "\n",
+    "import numpy as np\n",
+    "\n",
+    "salaries_array = np.array([32000, 45000, 28000, 67000, 52000])\n",
+    "after_raise_array = salaries_array * 1.10\n",
+    "\n",
+    "print(after_raise_array)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1310706e",
+   "metadata": {},
+   "source": [
+    "# 17. NumPy Statistics\n",
+    "\n",
+    "NumPy has built-in statistical functions.\n",
+    "\n",
+    "| Function | Meaning |\n",
+    "|---|---|\n",
+    "| `np.mean()` | average |\n",
+    "| `np.median()` | middle value |\n",
+    "| `np.std()` | standard deviation |\n",
+    "| `np.min()` | smallest value |\n",
+    "| `np.max()` | largest value |\n",
+    "| `np.sum()` | total |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "cde953dc",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 1: Salary statistics\n",
+    "\n",
+    "import numpy as np\n",
+    "\n",
+    "salaries = np.array([32000, 45000, 28000, 67000, 52000])\n",
+    "\n",
+    "print(\"Mean:\", np.mean(salaries))\n",
+    "print(\"Median:\", np.median(salaries))\n",
+    "print(\"Standard deviation:\", np.std(salaries))\n",
+    "print(\"Minimum:\", np.min(salaries))\n",
+    "print(\"Maximum:\", np.max(salaries))\n",
+    "print(\"Total payroll:\", np.sum(salaries))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "51cc474b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 2: Quiz score statistics\n",
+    "\n",
+    "import numpy as np\n",
+    "\n",
+    "quiz_scores = np.array([8, 12, 15, 19, 11, 17, 20, 14])\n",
+    "\n",
+    "print(\"Average quiz score:\", np.mean(quiz_scores))\n",
+    "print(\"Highest quiz score:\", np.max(quiz_scores))\n",
+    "print(\"Lowest quiz score:\", np.min(quiz_scores))\n",
+    "print(\"Total marks:\", np.sum(quiz_scores))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7f9deacf",
+   "metadata": {},
+   "source": [
+    "# 18. Boolean Indexing in NumPy\n",
+    "\n",
+    "Boolean indexing means filtering values using a condition.\n",
+    "\n",
+    "Example:\n",
+    "\n",
+    "```python\n",
+    "salaries[salaries > 45000]\n",
+    "```\n",
+    "\n",
+    "This means: show only salaries greater than 45,000."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "96b6fc00",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 1: Filter high earners\n",
+    "\n",
+    "import numpy as np\n",
+    "\n",
+    "salaries = np.array([32000, 45000, 28000, 67000, 52000])\n",
+    "high_earners = salaries[salaries > 45000]\n",
+    "\n",
+    "print(high_earners)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "bcc897e6",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 2: Filter passing scores\n",
+    "\n",
+    "import numpy as np\n",
+    "\n",
+    "scores = np.array([88, 45, 72, 91, 38, 67])\n",
+    "passing_scores = scores[scores >= 60]\n",
+    "\n",
+    "print(passing_scores)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "aa164666",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 3: Filter below-average salaries\n",
+    "\n",
+    "import numpy as np\n",
+    "\n",
+    "salaries = np.array([32000, 45000, 28000, 67000, 52000])\n",
+    "average_salary = np.mean(salaries)\n",
+    "below_average = salaries[salaries < average_salary]\n",
+    "\n",
+    "print(\"Average salary:\", average_salary)\n",
+    "print(\"Below average salaries:\", below_average)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3166f453",
+   "metadata": {},
+   "source": [
+    "# 19. NumPy 2D Arrays\n",
+    "\n",
+    "A 2D array is like a table. It has rows and columns, similar to Excel."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a052df1c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 1: Create a 2D array\n",
+    "\n",
+    "import numpy as np\n",
+    "\n",
+    "data = np.array([\n",
+    "    [85, 92, 78],\n",
+    "    [70, 88, 95],\n",
+    "    [60, 74, 82],\n",
+    "    [91, 85, 68],\n",
+    "])\n",
+    "\n",
+    "print(data)\n",
+    "print(data.shape)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "c15450ff",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 2: Accessing rows and columns\n",
+    "\n",
+    "import numpy as np\n",
+    "\n",
+    "data = np.array([\n",
+    "    [85, 92, 78],\n",
+    "    [70, 88, 95],\n",
+    "    [60, 74, 82],\n",
+    "    [91, 85, 68],\n",
+    "])\n",
+    "\n",
+    "print(\"First row:\", data[0])\n",
+    "print(\"Row 0, column 1:\", data[0, 1])\n",
+    "print(\"All rows, column 1:\", data[:, 1])\n",
+    "print(\"Row 1, all columns:\", data[1, :])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "de905ca9",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 3: Subject averages\n",
+    "\n",
+    "import numpy as np\n",
+    "\n",
+    "data = np.array([\n",
+    "    [85, 92, 78],\n",
+    "    [70, 88, 95],\n",
+    "    [60, 74, 82],\n",
+    "    [91, 85, 68],\n",
+    "])\n",
+    "\n",
+    "print(\"Subject averages:\")\n",
+    "print(f\"Maths:   {np.mean(data[:, 0]):.1f}\")\n",
+    "print(f\"English: {np.mean(data[:, 1]):.1f}\")\n",
+    "print(f\"Science: {np.mean(data[:, 2]):.1f}\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "3d6d47bf",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example 4: Student averages\n",
+    "\n",
+    "import numpy as np\n",
+    "\n",
+    "data = np.array([\n",
+    "    [85, 92, 78],\n",
+    "    [70, 88, 95],\n",
+    "    [60, 74, 82],\n",
+    "    [91, 85, 68],\n",
+    "])\n",
+    "\n",
+    "print(\"Student averages:\")\n",
+    "\n",
+    "for i, row in enumerate(data):\n",
+    "    print(f\"Student {i+1}: {np.mean(row):.1f}\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "93b8961e",
+   "metadata": {},
+   "source": [
+    "## Understanding the colon `:`\n",
+    "\n",
+    "In NumPy indexing, the colon means **all**.\n",
+    "\n",
+    "- `data[:, 0]` means all rows, column 0.\n",
+    "- `data[:, 1]` means all rows, column 1.\n",
+    "- `data[1, :]` means row 1, all columns.\n",
+    "\n",
+    "This will help you understand Pandas next week."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b1d1c3b3",
+   "metadata": {},
+   "source": [
+    "# 20. Practice Lab — Worked Solutions\n",
+    "\n",
+    "The following exercises are based on the Week 2 practice lab. Try solving them yourself first, then compare with the worked solution."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ecba9240",
+   "metadata": {},
+   "source": [
+    "## Exercise 1 — Statistics Calculator Function\n",
+    "\n",
+    "Write a function called `calculate_stats(numbers)` that accepts a list of numbers and returns mean, median, and mode."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "84699ba3",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Exercise 1 worked solution\n",
+    "\n",
+    "from statistics import median, mode\n",
+    "\n",
+    "def calculate_stats(numbers):\n",
+    "    mean = sum(numbers) / len(numbers)\n",
+    "    med = median(numbers)\n",
+    "    mod = mode(numbers)\n",
+    "    return mean, med, mod\n",
+    "\n",
+    "scores = [88, 72, 91, 45, 67, 72, 88, 55]\n",
+    "\n",
+    "m, med, mod = calculate_stats(scores)\n",
+    "\n",
+    "print(f\"Mean: {m:.1f}\")\n",
+    "print(f\"Median: {med}\")\n",
+    "print(f\"Mode: {mod}\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5b18a2ec",
+   "metadata": {},
+   "source": [
+    "## Exercise 2 — Student Score Filter\n",
+    "\n",
+    "Build a dictionary of 5 students and their scores. Print only students scoring above 70 and calculate the class average."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "08e21044",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Exercise 2 worked solution\n",
+    "\n",
+    "students = {\n",
+    "    \"Amara\": 85,\n",
+    "    \"Kwame\": 62,\n",
+    "    \"Priya\": 91,\n",
+    "    \"Jake\": 55,\n",
+    "    \"Zara\": 78\n",
+    "}\n",
+    "\n",
+    "print(\"Students scoring above 70:\")\n",
+    "\n",
+    "for name, score in students.items():\n",
+    "    if score > 70:\n",
+    "        print(f\"{name}: {score}\")\n",
+    "\n",
+    "class_average = sum(students.values()) / len(students)\n",
+    "\n",
+    "print(f\"Class average: {class_average:.1f}\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ee6b3578",
+   "metadata": {},
+   "source": [
+    "## Exercise 3 — NumPy Statistics on Salaries\n",
+    "\n",
+    "Create a NumPy array of 10 salaries. Calculate mean, median, standard deviation, minimum, maximum, and above-average earners."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "755c3196",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Exercise 3 worked solution\n",
+    "\n",
+    "import numpy as np\n",
+    "\n",
+    "salaries = np.array([\n",
+    "    32000, 45000, 28000, 67000, 52000,\n",
+    "    38000, 71000, 44000, 29000, 58000\n",
+    "])\n",
+    "\n",
+    "mean_salary = np.mean(salaries)\n",
+    "median_salary = np.median(salaries)\n",
+    "std_salary = np.std(salaries)\n",
+    "min_salary = np.min(salaries)\n",
+    "max_salary = np.max(salaries)\n",
+    "\n",
+    "above_average = salaries[salaries > mean_salary]\n",
+    "\n",
+    "print(f\"Mean salary: £{mean_salary:.2f}\")\n",
+    "print(f\"Median salary: £{median_salary:.2f}\")\n",
+    "print(f\"Standard deviation: £{std_salary:.2f}\")\n",
+    "print(f\"Minimum salary: £{min_salary}\")\n",
+    "print(f\"Maximum salary: £{max_salary}\")\n",
+    "print(\"Above-average earners:\", above_average)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "96f6e85c",
+   "metadata": {},
+   "source": [
+    "## Exercise 4 — Personal Data World Update\n",
+    "\n",
+    "This exercise extends your Week 1 project using functions, loops and NumPy."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "812dc93e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Exercise 4 worked solution\n",
+    "\n",
+    "import numpy as np\n",
+    "\n",
+    "data_collected = {\n",
+    "    \"Netflix\": [\"watch history\", \"ratings\", \"search terms\", \"device info\"],\n",
+    "    \"Spotify\": [\"listening history\", \"skips\", \"playlists\", \"location\"],\n",
+    "    \"Google Maps\": [\"location\", \"routes\", \"searches\", \"travel time\"],\n",
+    "    \"WhatsApp\": [\"contacts\", \"messages metadata\", \"device info\"],\n",
+    "    \"Amazon\": [\"purchase history\", \"searches\", \"delivery address\", \"payment method\"]\n",
+    "}\n",
+    "\n",
+    "def count_unique_data_types(data_dict):\n",
+    "    unique_types = set()\n",
+    "    \n",
+    "    for app, data_types in data_dict.items():\n",
+    "        for data_type in data_types:\n",
+    "            unique_types.add(data_type)\n",
+    "    \n",
+    "    return len(unique_types), unique_types\n",
+    "\n",
+    "total_unique, unique_items = count_unique_data_types(data_collected)\n",
+    "\n",
+    "print(f\"Total unique data types collected: {total_unique}\")\n",
+    "print(\"Unique data types:\")\n",
+    "for item in unique_items:\n",
+    "    print(\"-\", item)\n",
+    "\n",
+    "# Estimated daily data events generated by each app\n",
+    "daily_events = np.array([20, 35, 50, 80, 25])\n",
+    "\n",
+    "print(\"Average daily data events:\", np.mean(daily_events))\n",
+    "print(\"Maximum daily data events:\", np.max(daily_events))\n",
+    "print(\"Total estimated daily events:\", np.sum(daily_events))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "bdc04423",
+   "metadata": {},
+   "source": [
+    "# 21. Additional Beginner Practice Examples\n",
+    "\n",
+    "These extra examples help you practise the same concepts in different contexts."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "29c4c9a8",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Additional Example 1: Student payment status\n",
+    "\n",
+    "students_payment = {\n",
+    "    \"Amara\": True,\n",
+    "    \"Kwame\": False,\n",
+    "    \"Priya\": True,\n",
+    "    \"Jake\": False,\n",
+    "    \"Zara\": True\n",
+    "}\n",
+    "\n",
+    "for student, has_paid in students_payment.items():\n",
+    "    if has_paid:\n",
+    "        print(f\"{student} has paid.\")\n",
+    "    else:\n",
+    "        print(f\"{student} has not paid yet.\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "cc39bae5",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Additional Example 2: Simple fee balance function\n",
+    "\n",
+    "def fee_status(total_fee, amount_paid):\n",
+    "    balance = total_fee - amount_paid\n",
+    "    \n",
+    "    if balance == 0:\n",
+    "        return \"Fully paid\"\n",
+    "    elif balance > 0:\n",
+    "        return f\"Balance remaining: £{balance}\"\n",
+    "    else:\n",
+    "        return f\"Overpaid by £{abs(balance)}\"\n",
+    "\n",
+    "print(fee_status(400, 400))\n",
+    "print(fee_status(400, 200))\n",
+    "print(fee_status(400, 450))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8c71c56e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Additional Example 3: Cleaning a list of city names\n",
+    "\n",
+    "cities = [\" london \", \"MANCHESTER\", \"birmingham \", \" LEEDS\"]\n",
+    "\n",
+    "cleaned_cities = [city.strip().title() for city in cities]\n",
+    "\n",
+    "print(cleaned_cities)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "5404bb2e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Additional Example 4: NumPy monthly spending analysis\n",
+    "\n",
+    "import numpy as np\n",
+    "\n",
+    "monthly_spending = np.array([450, 520, 610, 480, 700, 650, 580, 490, 530, 620, 750, 690])\n",
+    "\n",
+    "print(\"Average monthly spending:\", np.mean(monthly_spending))\n",
+    "print(\"Highest monthly spending:\", np.max(monthly_spending))\n",
+    "print(\"Lowest monthly spending:\", np.min(monthly_spending))\n",
+    "\n",
+    "above_average_months = monthly_spending[monthly_spending > np.mean(monthly_spending)]\n",
+    "\n",
+    "print(\"Months above average spending:\", above_average_months)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "4a52d47b",
+   "metadata": {},
+   "source": [
+    "# 22. Student Tasks\n",
+    "\n",
+    "Complete the following tasks before the next class.\n",
+    "\n",
+    "## Task 1 — Variables and Types\n",
+    "\n",
+    "Create variables for your name, age, course, whether you are a student, and expected final score. Print each variable and its type.\n",
+    "\n",
+    "## Task 2 — String Cleaning\n",
+    "\n",
+    "Create a list of five messy names with spaces and inconsistent capital letters. Clean them using `.strip()` and `.title()`.\n",
+    "\n",
+    "## Task 3 — Lists and Loops\n",
+    "\n",
+    "Create a list of 10 apps you use. Use a loop to print: `I use [app name] and it collects my data.`\n",
+    "\n",
+    "## Task 4 — Dictionary\n",
+    "\n",
+    "Create a dictionary of 5 apps and the type of data each app collects. Loop through the dictionary and print each app with its data.\n",
+    "\n",
+    "## Task 5 — Function\n",
+    "\n",
+    "Write a function that accepts a score and returns `Distinction`, `Merit`, `Pass`, or `Resit`.\n",
+    "\n",
+    "## Task 6 — NumPy\n",
+    "\n",
+    "Create a NumPy array of 10 quiz scores. Calculate mean, median, minimum, maximum, and scores above the mean.\n",
+    "\n",
+    "## Task 7 — GitHub\n",
+    "\n",
+    "Save this notebook in your `/week2` folder and push it to GitHub."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "2e5bcd25",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Task 1 starter code\n",
+    "\n",
+    "my_name = \"Your Name\"\n",
+    "my_age = 0\n",
+    "my_course = \"Data Analytics\"\n",
+    "is_student = True\n",
+    "expected_score = 85.5\n",
+    "\n",
+    "print(my_name, type(my_name))\n",
+    "print(my_age, type(my_age))\n",
+    "print(my_course, type(my_course))\n",
+    "print(is_student, type(is_student))\n",
+    "print(expected_score, type(expected_score))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8b0aee9d",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Task 2 starter code\n",
+    "\n",
+    "messy_names = [\" alice \", \"BOB\", \"  charlie brown\", \"MARY JONES  \", \"  john smith  \"]\n",
+    "cleaned_names = []\n",
+    "\n",
+    "for name in messy_names:\n",
+    "    cleaned_names.append(name.strip().title())\n",
+    "\n",
+    "print(cleaned_names)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "27c727c9",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Task 3 starter code\n",
+    "\n",
+    "my_apps = [\"Netflix\", \"Spotify\", \"Amazon\", \"Instagram\", \"WhatsApp\"]\n",
+    "\n",
+    "for app in my_apps:\n",
+    "    print(f\"I use {app} and it collects my data.\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "49660e18",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Task 4 starter code\n",
+    "\n",
+    "app_data = {\n",
+    "    \"Netflix\": \"watch history\",\n",
+    "    \"Spotify\": \"listening history\",\n",
+    "    \"Amazon\": \"purchase history\",\n",
+    "    \"Google Maps\": \"location history\",\n",
+    "    \"WhatsApp\": \"message metadata\"\n",
+    "}\n",
+    "\n",
+    "for app, data in app_data.items():\n",
+    "    print(f\"{app} collects {data}.\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "2aa033c1",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Task 5 starter code\n",
+    "\n",
+    "def classify_score(score):\n",
+    "    if score >= 80:\n",
+    "        return \"Distinction\"\n",
+    "    elif score >= 65:\n",
+    "        return \"Merit\"\n",
+    "    elif score >= 50:\n",
+    "        return \"Pass\"\n",
+    "    else:\n",
+    "        return \"Resit\"\n",
+    "\n",
+    "print(classify_score(90))\n",
+    "print(classify_score(70))\n",
+    "print(classify_score(55))\n",
+    "print(classify_score(40))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "7a46e917",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Task 6 starter code\n",
+    "\n",
+    "import numpy as np\n",
+    "\n",
+    "quiz_scores = np.array([12, 15, 18, 9, 20, 14, 16, 11, 19, 13])\n",
+    "mean_score = np.mean(quiz_scores)\n",
+    "\n",
+    "print(\"Mean:\", mean_score)\n",
+    "print(\"Median:\", np.median(quiz_scores))\n",
+    "print(\"Minimum:\", np.min(quiz_scores))\n",
+    "print(\"Maximum:\", np.max(quiz_scores))\n",
+    "print(\"Scores above the mean:\", quiz_scores[quiz_scores > mean_score])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "fe14a503",
+   "metadata": {},
+   "source": [
+    "# 23. GitHub Push Reminder\n",
+    "\n",
+    "After completing your Week 2 work, use the following commands in your terminal.\n",
+    "\n",
+    "Make sure you are inside your portfolio repository folder.\n",
+    "\n",
+    "```bash\n",
+    "mkdir week2\n",
+    "# Move this notebook into the week2 folder if it is not already there\n",
+    "\n",
+    "git status\n",
+    "git add .\n",
+    "git commit -m \"Week 2: Python foundations notebook completed\"\n",
+    "git push origin main\n",
+    "```\n",
+    "\n",
+    "## Checklist before pushing\n",
+    "\n",
+    "- The notebook runs from top to bottom.\n",
+    "- You have completed the student tasks.\n",
+    "- Your folder structure is clean.\n",
+    "- Your commit message is meaningful.\n",
+    "- Your GitHub repository is public or accessible to your lecturer."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7441cda4",
+   "metadata": {},
+   "source": [
+    "# 24. Summary\n",
+    "\n",
+    "In this notebook, you learned:\n",
+    "\n",
+    "- Why Python is important for data analytics.\n",
+    "- How to create and use variables.\n",
+    "- How to recognise core data types.\n",
+    "- How to work with strings, lists and dictionaries.\n",
+    "- How to use conditions.\n",
+    "- How to write loops.\n",
+    "- How to write functions.\n",
+    "- How to import modules.\n",
+    "- How to handle errors.\n",
+    "- How to use NumPy arrays.\n",
+    "- How to calculate statistics with NumPy.\n",
+    "- How to complete Week 2 practice exercises.\n",
+    "\n",
+    "## Final encouragement\n",
+    "\n",
+    "Python confidence comes from practice.\n",
+    "\n",
+    "Do not worry if you do not remember everything immediately. Run the cells, change the values, make mistakes, read the errors, fix them, and try again."
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "name": "python",
+   "version": "3.11"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
