@@ -1,10 +1,8 @@
-
-
 Author
+
 Theophilus Mba
 
-Project Description
-This project is a simple Python exercise completed in a Jupyter Notebook to demonstrate the use of fundamental Python data structures and control flow. The notebook creates and prints a list of applications, creates a second list containing the type of data each application stores, combines both lists into a dictionary using Python's zip() function, and iterates through the dictionary with a for loop to display each application alongside its corresponding data type. This project reinforces core Python programming concepts that are essential for data analysis and software development.
+This repository contains my journey of learning data analysis with Python. I'm using it to document my progress, practice new concepts, and share the code I write as I learn. You'll find exercises, small projects, and experiments with libraries like Pandas, NumPy, Matplotlib, and Seaborn. The code may not always be perfect, but it reflects my learning process and improvements over time. Feel free to explore, learn alongside me, or suggest better approaches where you see room for improvement.
 
 Skills Demonstrated
 Creating and working with Python lists
